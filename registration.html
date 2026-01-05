@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Better Memory</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1> Better Memory!!!</h1>
+    </header>
+    <!--Navigations Bar-->
+
+    <div class="Navigation" style="position:fixed; top:15px; right:20px;z-index: 1000;">
+      <!--Home Page-->
+      <button class="secondary1" onclick="window.location.href='index.html'">Home</button>
+      <!--Game page-->
+      <button class="secondary1" id="gameNav">Game</button>
+      <!--Demo Game-->
+      <button id="demoBtn" class="secondary1">🎮 Try Demo Mode</button>
+      <!--Registraion Page-->
+      <button class="secondary1" onclick="window.location.href='registration.html'">Registration</button>
+      <!--Login Page-->
+      <button class="secondary1" onclick="window.location.href='login.html'">Login</button>
+      <!--Leaderboard Page-->
+      <button id="leaderboardNav" class="secondary1">Leaderboard</button>
+      <p id="msgOfIndex" style="color:red; font-weight:bold; margin-top:10px;"></p>
+    </div>
+    <!-- Registration Section -->
+    <section id="regSection" class="card">
+      <h2>Register Yourself</h2>
+      <label class="labels"> Username <br>
+        <input type="text" id="userName" placeholder="Username must be 6-12 letters/number only" required></label>
+      <br>
+      <label class="labels"> Password <br>
+        <input type="password" id="userPass" placeholder="Password must have atleast 8 characters & 1 number."
+          required></label>
+      <br>
+      <label class="labels"> Email Address <br>
+        <input type="email" id="userEmail" placeholder="Example: abc@gmail.com" required></label>
+      <br>
+      <label class="labels"> Number <br>
+        <input type="text" id="userNumber" placeholder="Example: 07363738272 ">
+        <br><br>
+        <!--Buttons for user's easy navigation-->
+        <div class="row">
+          <button id="regBtn">Register</button>
+          <button id="taketoLogin" class="secondary" onclick="window.location.href='login.html'">Already have an
+            account?</button>
+        </div>
+        <!--Registration related alerts-->
+        <p class="small-muted" id="msgOfReg"></p>
+    </section>
+    <!--Connecting JS files-->
+    <script src="js/auth.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

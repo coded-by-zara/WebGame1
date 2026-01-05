@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Better Memory</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="game-page">
+  <header>
+    <h1>🍓 Better Memory!!! 🦋</h1>
+  </header>
+
+  <!--Navigations Bar-->
+  <div style="position:fixed; top:15px; right:20px;
+    z-index: 1000;">
+
+    <!--Home Page-->
+    <button class="secondary1" onclick="window.location.href='index.html'">Home</button>
+
+    <!--Game page-->
+    <button class="secondary1" id="gameNav">Game</button>
+    <!--Demo Game-->
+    <button id="demoBtn" class="secondary1">🎮 Try Demo Mode</button>
+    <p id="demoMessage" class="demo-note hidden"></p>
+
+
+    <!--Registraion Page-->
+    <button class="secondary1" onclick="window.location.href='registration.html'">Registration</button>
+
+    <!--Login Page-->
+    <button class="secondary1" onclick="window.location.href='login.html'">Login</button>
+
+    <!--Leaderboard Page-->
+    <button id="leaderboardNavi" class="secondary1"
+      onclick="window.location.href='leaderboard.html'">Leaderboard</button>
+    <p id="msgOfIndex" style="color:red; font-weight:bold; margin-top:10px;"></p>
+  </div>
+
+  <!--Main Game Box-->
+  <main class="container">
+    <section id="gameSection" class="card">
+      <!--Game Options for Player-->
+      <div class="controls">
+        <label>
+          <input type="radio" name="mode" value="player" checked> 🎮 Play Solo
+        </label>
+        <label>
+          <input type="radio" name="mode" value="computer"> 🤖 Play vs Computer
+        </label>
+      </div>
+      <!--Start the Game-->
+      <div class="center">
+        <button id="btnStart">Start Game</button>
+      </div>
+      <br>
+      <p id="statusText" class="muted">Press "Start Game" to begin!</p>
+      <div id="board" class="board"></div>
+      <!--Few buttons for user to navigate other pages-->
+      <div class="row">
+        <button class="secondary" id="leaderboardBtn" onclick="window.location.href='leaderboard.html'">View
+          Leaderboard</button>
+        <button class="secondary" id="logoutBtn" onclick="window.location.href='index.html'"> Logout</button>
+        <button class="secondary" id="restartBtn" style="display:none;">Restart</button>
+        <button class="secondary" id="goBackBtn" style="display:none;">Go Back</button>
+      </div>
+    </section>
+  </main>
+
+  <!--Connecting JS files-->
+  <script src="js/game.js"></script>
+  <script src="js/index.js"></script>
+
+
+</body>
+
+</html>

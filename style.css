@@ -1,0 +1,332 @@
+/*Rainbow Theme*/
+/*Importing Font*/
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+/*Position and Font for in General*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comic Neue', cursive;
+}
+
+/* Similiar Background for every Page*/
+body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #333;
+  position: relative;
+}
+
+/*Floating emojis */
+.emoji {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.15;
+  animation: floatEmojis linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/*Random floating directions */
+@keyframes floatEmojis {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-80vh) translateX(30vw) rotate(180deg);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0) rotate(360deg);
+  }
+}
+
+/*Background gradient animation for Rainbow */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*Position for Main Game Container*/
+.container {
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/*Header 1 and Header 2*/
+h1,
+h2 {
+  color: navy;
+  text-shadow: 2px 2px 5px #0003;
+  margin-bottom: 20px;
+}
+
+/*Card Layouts*/
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/*User Input Fields*/
+input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid #ccc;
+  margin: 8px 0;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+}
+
+input:focus {
+  border-color: #ff6ec4;
+  box-shadow: 0 0 10px #ff6ec477;
+}
+
+.labels {
+  color: navy;
+}
+
+
+/*Buttons Design*/
+button {
+  background: linear-gradient(to right, #56ab2f, #a8e063);
+  color: navy;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, #f7971e, #ffd200);
+}
+
+/*Buttons Background*/
+.secondary {
+  background: linear-gradient(to right, #56ab2f, #a8e063);
+}
+
+.secondary1 {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2ecc71;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/*Game Mode Buttons*/
+.controls {
+  margin-bottom: 15px;
+}
+
+.controls label {
+  display: inline-block;
+  background: linear-gradient(to right, #ffb6c1, #ffcc70);
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.controls input[type="radio"] {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #555;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.controls input[type="radio"]:checked+label {
+  background: linear-gradient(to right, #74ebd5, #9face6);
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*Game Board Design*/
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/*Card Designs*/
+.card-tile {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 15px;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, back-ground 0.3s;
+}
+
+/*When Card Flips*/
+.card-tile.flipped {
+  transform: rotateY(180deg);
+  background: #ffeaa7;
+}
+
+/*Cards Matching Colour*/
+.card-tile.matched {
+  background: #a8e6cf;
+  transform: scale(1.1);
+}
+
+/*Leaderboard Table Design*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff8;
+  border-radius: 10px;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 2px solid #fff;
+  text-align: center;
+  font-size: 18px;
+}
+
+th {
+  background: #74b9ff;
+  color: white;
+}
+
+.result {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #555;
+}
+
+/*Hidden Elements are invisible*/
+.hidden {
+  display: none;
+}
+
+/*Rainbow Effect on Buttons Hover */
+button,
+.controls label {
+  position: relative;
+  overflow: hidden;
+}
+
+button::before,
+.controls label::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(#ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  animation: spin 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+button:hover::before,
+.controls label:hover::before {
+  opacity: 0.4;
+}
+
+button span,
+.controls label span {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*Prevent navigation overlapping Container */
+body.game-page main.container {
+  padding-top: 80px;
+}
+
+/*Same Position for Navigation Bar in every page*/
+.Navigation,
+body>div[style*="position:fixed"] {
+  z-index: 1000;
+}
+
+.demo-note {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #ff6ec4;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: inline-block;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Better Memory Leaderboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!--Navigations Bar-->
+  <div style="position:fixed; top:15px; right:20px;z-index: 1000;">
+    <!--Home page-->
+    <button class="secondary1" onclick="window.location.href='index.html'">Home</button>
+    <!--Game page-->
+    <button class="secondary1" id="gameNav">Game</button>
+    <!--Demo Game-->
+    <button id="demoBtn" class="secondary1">🎮 Try Demo Mode</button>
+    <!--Registraion page-->
+    <button class="secondary1" onclick="window.location.href='registration.html'">Registration</button>
+    <!--Login page-->
+    <button class="secondary1" onclick="window.location.href='login.html'">Login</button>
+    <!--Leaderboard page-->
+    <button id="leaderboardNav" class="secondary1">Leaderboard</button>
+    <p id="msgOfIndex" style="color:red; font-weight:bold; margin-top:10px;"></p>
+  </div>
+
+  <!--Leaderboard Table-->
+  <div class="container">
+    <section class="card">
+      <h2>🏆 Leaderboard</h2>
+      <table id="leaderboard">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Best Time</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboardBody"></tbody>
+      </table>
+      <!--Button to go back to game page-->
+      <div class="row">
+        <button class="secondary" onclick="window.location.href='game.html'">Back to Game</button>
+      </div>
+    </section>
+  </div>
+  <!--Connecting Js files-->
+  <script src="js/leaderboard.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
